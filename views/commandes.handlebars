@@ -1,0 +1,64 @@
+<div class="orderstate"><h2 >orders status</h2></div>
+
+<div class="commande">  
+      
+<table>
+    <thead>
+    <th>ID commande</th>
+    <th>id Utilisateur</th>
+    <th>date de commande</th>
+    <th>instructions</th>
+    <th>etat de commande</th>
+    </thead>
+    <tbody>   
+        {{#each commandes}}  
+         <tr>
+        <th>{{this.id_commande}}</th>
+        <td>{{this.id_utilisateur}}</td>
+        <td>{{this.date}}</td>
+        <td>{{this.texte}}</td> 
+        <td>
+            <select class="form-control w-100" id="status" data-id = {{this.id_commande}}>
+          <option  value="1" >In kitchen</option>
+        <option value="2" >In Delivery</option>
+        <option  value="3" >In completed</option>
+        </select>
+        </td>
+        <td><select class="form-control w-100" name="status">
+             {{#if this.vide}}
+                 <option selected value="vide">commande vide</option>
+             {{else}}
+             <option value="vide">vide</option>
+             {{/if}}
+                            
+             {{#if this.payement}}
+              <option selected value="payement">payement</option>
+             {{else}}
+                <option value="payement">payement</option>
+             {{/if}}
+
+             {{#if this.preparation}}
+               <option selected value="preparation">preparation</option>
+             {{else}}
+             <option value="preparation">preparation</option>
+            {{/if}}
+                         
+            {{#if this.livraison}}
+             <option selected value="livraison">livraison</option>
+            {{else}}
+             <option value="livraison">livraison</option>
+            {{/if}}</td>
+                           
+                                                    
+        </select>
+         </tr>
+       {{/each}}
+    </tbody>
+</table>
+   
+</div>
+
+
+
+
+<script type="module" src="./js/commandes.js"></script>
