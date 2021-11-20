@@ -1,0 +1,25 @@
+<div class="commande">
+    <div>
+        <h2>Our orders</h2>
+    </div>
+
+    {{#each commandes}}
+    
+    <div class="item">
+        <p>{{this.id_commande}}</p>
+        {{this.id_utilisateur}}
+        <h5>date de commande</h5>
+        {{this.date}}
+        <h5>order status</h5>
+        <select id="status" data-id = {{this.id_commande}}>
+          <option  value="1" >In kitchen</option>
+        <option value="2" >In Delivery</option>
+        <option  value="3" >In completed</option>
+        </select>
+    </div>
+</div>
+{{/each}}
+
+
+
+<script type="module" src="./js/commandes.js"></script>

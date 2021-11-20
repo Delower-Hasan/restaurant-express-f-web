@@ -1,0 +1,53 @@
+<div class="pagereservation">
+<div class="cont" >
+    <div class="titre">
+        <h2>MAKE A RESERVATION</h2>
+    </div>
+    <span id="err">{{errmsg}}</span>
+    <form action="/reservation" id="reservFormSubmit" method="post">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">First Name</span>
+                <input type="text" id="fname" name="fname" placeholder="Enter your first name"  required >
+                    
+            </div>
+            <div class="input-box">
+                <span class="details">Last name</span>
+                <input type="text" id="lname" name="lname" placeholder="Entre your last name"  required>
+                
+            </div>
+            <div class="input-box">
+                <span class="details">Emaill</span>
+                <input type="email" id="email" name="email" placeholder="Enter your email"  required>
+                
+            </div>
+            <div class="input-box">
+                <span class="details">Phone</span>
+                <input type="tel" id="tel" name="tel" placeholder="Enter your phone number please" required >
+               
+            </div>
+            <div class="input-box">
+                <span class="details">Date</span>
+                <input type="date" id="date" name="date" placeholder="choose a date" required >
+                
+            </div>
+
+            <div class="input-box">
+                <span class="details">Persons number</span>
+                <input type="number" name="person" id="person" placeholder="How many are you"  required>
+                
+            </div>
+        </div>
+
+        <div class="button">
+            <br>
+            <input type="submit" value="Book now">
+            <button class="buttonres" type="button" value="Home" ><a href="/home">Home</a></button>
+        </div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+<script type="module" src="./js/validation/reservation.js"></script>

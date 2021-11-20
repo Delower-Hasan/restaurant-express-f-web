@@ -1,0 +1,52 @@
+<section class="menu" id="menu">
+    <div class="menu-container">
+        <div class="menu-head">
+            <h2>Our Menu</h2>
+        </div>
+<div class="menu-items ">
+    {{#each produits}}
+    <div class="item_Id" data-id="{{this.id_produit}}">
+       <div class="menu-item-details">
+        <img class="menu-item-image" src="{{this.image}}">
+        <span class="menu-item-title">{{this.nom}}</span>
+        <span class="menu-item-price">{{this.prix}}$</span>
+        <input  class="btn btn-primary menu-item-button prod_id" type="button" value="Add to cart" >
+    </div>
+    </div>
+    {{/each}}
+</div>
+</section>
+<section class="container content-section" id="cart">
+    <h2 class="section-cart">Your Cart</h2>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+   
+    <div class="cart-items">
+         {{!-- carts --}}
+    {{#each carts}}
+   <div class="cart-row">
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="{{this.product.image}}" width="100" height="100">
+            <span class="cart-item-title">{{this.product.nom}}</span>
+        </div>
+        <span class="cart-price cart-column">{{this.product.prix}}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" data-id="{{this.product.id_produit}}" type="number" value="{{this.quantite}}">
+            <button class="btn btn-danger" data-id="{{this.product.id_produit}}" type="button">REMOVE</button>
+        </div>
+   </div>
+   {{/each}}
+{{!-- carts --}}
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">0</span>
+    </div>
+    <a class="btn btn-primary btn-purchase" href="./carts">PURCHASE</a>
+</section>
+
+<script type="module" src="./js/produits.js"></script>
+<script type="module" src="./js/panier.js"></script>
